@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <style>table th, table td {
+        padding: 5px;
+    }</style>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>lastname</th>
+        <th>department</th>
+    </tr>
+
+    <tr th:each="cr : ${users}">
+        <td th:utext="${cr.getId()}">id</td>
+        <td th:utext="${cr.getName()}">name</td>
+        <td th:utext="${cr.getLastName()}">lastname</td>
+        <td th:utext="${cr.getDepartment()}">department</td>
+    </tr>
+</table>
+<input type="button" value="Add"
+       onclick = "window.location.href = 'users/addNew'"/>
+</body>
+</html>
