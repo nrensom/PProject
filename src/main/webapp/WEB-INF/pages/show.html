@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+    <style>table th, table td {
+        padding: 5px;
+    }
+
+    .btn {
+        display: inline-block; /* Строчно-блочный элемент */
+        background: #e75480; /* Серый цвет фона */
+        color: #fff; /* Белый цвет текста */
+        padding: 0.25rem 0.5rem; /* Поля вокруг текста */
+        text-decoration: none; /* Убираем подчёркивание */
+        border-radius: 3px; /* Скругляем уголки */
+    }
+    </style>
+</head>
+<body>
+<td th:utext="${user.getId()}">VALUE</td>
+</br>
+<td th:utext="${user.getName()}">VALUE</td>
+</br>
+<td th:utext="${user.getLastName()}">VALUE</td>
+</br>
+<td th:utext="${user.getDepartment()}">VALUE</td>
+</br>
+<td th:utext="${user.getAge()}">VALUE</td>
+</br>
+<a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
+    <input type="submit" value="Delete" class="btn"/>
+</form>
+<input type="button" class="btn"   value="Go to main page!"
+       onclick="window.location.href = '/users'"/>
+</body>
+</html>
