@@ -34,13 +34,13 @@ import java.util.Properties;
 @EnableTransactionManagement
 @ComponentScan("project")
 @PropertySource("classpath:db.properties")
-public class DatabaseConfig implements WebMvcConfigurer {
+public class Config implements WebMvcConfigurer {
 
     private final Environment env;
     private final ApplicationContext applicationContext;
 
     @Autowired
-    public DatabaseConfig(Environment env, ApplicationContext applicationContext) {
+    public Config(Environment env, ApplicationContext applicationContext) {
         this.env = env;
         this.applicationContext = applicationContext;
     }
@@ -111,9 +111,5 @@ public class DatabaseConfig implements WebMvcConfigurer {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-    @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
-        return new PersistenceExceptionTranslationPostProcessor();
     }
 }
