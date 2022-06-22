@@ -11,11 +11,13 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.List;
+
 @Repository
 
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager em;
+
     @Override
     public List<User> getAllUsers() {
         return em.createQuery("from User", User.class).getResultList();
@@ -33,11 +35,11 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public void delete(long id) {
-        em.createQuery("delete from User where id=:id").setParameter("id",id).executeUpdate();
+        em.createQuery("delete from User where id=:id").setParameter("id", id).executeUpdate();
     }
 
     @Override
     public User show(long id) {
-        return em.find(User.class,id);
+        return em.find(User.class, id);
     }
 }

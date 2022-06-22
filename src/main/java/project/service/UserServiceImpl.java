@@ -7,10 +7,12 @@ import project.entity.User;
 
 import javax.transaction.Transactional;
 import java.util.List;
+
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
+
     @Override
     @Transactional
     public List<User> getAllUsers() {

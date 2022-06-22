@@ -28,12 +28,8 @@
 </br>
 <td th:utext="${user.getAge()}">VALUE</td>
 </br>
-<a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
 
-<form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
-    <input type="submit" value="Delete" class="btn"/>
-</form>
-<input type="button" class="btn"   value="Go to main page!"
+<input type="button" class="btn" value="Go to main page!"
        onclick="window.location.href = '/users'"/>
 </body>
 </html>

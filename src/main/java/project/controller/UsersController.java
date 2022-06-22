@@ -11,7 +11,6 @@ import project.service.UserService;
 
 @Controller
 @RequestMapping("/users")
-@ComponentScan("project")
 public class UsersController {
 
     private UserService userService;
