@@ -39,7 +39,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User show(long id) {
+    public User getUser(long id) {
         return em.find(User.class, id);
     }
 }
